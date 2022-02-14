@@ -1,0 +1,58 @@
+.container{
+  background: linear-gradient(to bottom right, #ccffff 0%, #ffcc99 100%);
+}
+form{
+    background-color: rgb(186, 224, 224);
+    margin: 20px 25% 10px 20px;
+    padding:20px;
+    
+}
+h2{
+    padding: 15px;
+}
+.navigation{
+    padding: 35px;
+    left: 0;
+    border: 1px solid aqua;
+    
+}
+.malindi{
+    padding: 30px;
+    text-align: center;
+    
+}
+.mal-d{
+    padding: 87px;
+    font-size: 50px;
+}
+.hero{
+    padding: 20px;
+}
+.forecast{
+    padding: 20px;
+    font-size: 30px
+}
+.icon{
+    background-color: rgb(186, 224, 224);
+     
+}
+h6{
+    text-align: center;
+    
+}
+#day-time{
+    color:white;
+}
+.degree{
+     font-size:32px;
+}
+ 
+a{
+    text-decoration: none;
+    
+}
+   
+#temp{
+    display: none;
+}
+   
