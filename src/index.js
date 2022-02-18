@@ -44,6 +44,8 @@ function showTemperature(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  convertTemperature = response.data.main.temp;
   
 }
 
@@ -84,6 +86,29 @@ console.log(currentLocation)
 let button = document.querySelector("#btn");
 btn.addEventListener("click",currentLocation);
 
+// conversion to fahrenheit and celcius
 
+function convertToFahrenheit(event){
+  event.preventDefault();
+  let fahTemperature =(convertTemperature*9)/5+32;
+  document.querySelector("#tempfah").innerHTML=Math.round(fahTemperature);
+  // remove the active class from the celcious link
+  celcius.classList.remove("active");
+  fahrenheit.classList.add("active");
+}
+
+let convertTemperature = null;
+
+let fahrenheit = document.querySelector("#Fahrenheit");
+fahrenheit.addEventListener("click",convertToFahrenheit);
+
+function convertToCelcius(event) {
+  event.preventDefault();
+  let celTemperature = document.querySelector("#tempfah");
+  celTemperature.innerHTML=Math.round(convertTemperature);
+}
+
+let celcius = document.querySelector("#celsius");
+celcius.addEventListener("click", convertToCelcius);
 
 

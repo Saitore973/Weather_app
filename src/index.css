@@ -60,7 +60,12 @@ a{
     
 }
    
-#temp{
-    display: none;
+.active{
+    color:black;
+    cursor:default;
+}
+
+.active:hover{
+    text-emphasis: none;
 }
    
