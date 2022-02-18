@@ -68,4 +68,8 @@ a{
 .active:hover{
     text-emphasis: none;
 }
+#wind{
+    color:blue;
+    margin-left:100px;
+}
    

@@ -45,6 +45,7 @@ function showTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   document.querySelector("#description").innerHTML=response.data.weather[0].description;
+  document.querySelector("#wind").innerHTML=`Wind Speed:${response.data.wind.speed}km/h`;
 
   convertTemperature = response.data.main.temp;
   
