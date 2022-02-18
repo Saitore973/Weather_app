@@ -113,4 +113,58 @@ function convertToCelcius(event) {
 let celcius = document.querySelector("#celsius");
 celcius.addEventListener("click", convertToCelcius);
 
+// nairobi weather
+
+function naiWeather(event) {
+ event.preventDefault();
+
+let apiKey = "82ed732deaa09964f901cdd99d4ce9a3";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Nairobi&units=metric&appid=${apiKey}`;
+
+axios.get(apiUrl).then(showTemperature);
+
+console.log(apiUrl);
+}
+
+let Nairobi = document.querySelector("#nai");
+nai.addEventListener("click", naiWeather);
+
+
+
+// cape town weather
+
+function capeWeather(event) {
+event.preventDefault();
+
+let apiKey = "82ed732deaa09964f901cdd99d4ce9a3";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Cape Town&units=metric&appid=${apiKey}`;
+
+axios.get(apiUrl).then(showTemperature);
+
+
+
+}
+
+let Capetown = document.querySelector("#cape");
+cape.addEventListener("click", capeWeather);
+
+
+
+
+// new york weather
+
+function newWeather(event) {
+event.preventDefault();
+
+let apiKey = "82ed732deaa09964f901cdd99d4ce9a3";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=New York&units=metric&appid=${apiKey}`;
+
+axios.get(apiUrl).then(showTemperature);
+
+}
+
+let Newyork = document.querySelector("#newy");
+newy.addEventListener("click", newWeather);
+
+
 
