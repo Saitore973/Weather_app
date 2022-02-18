@@ -9,7 +9,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="src/index.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <title> Coast Weather App</title>
+    <title> City Weather App</title>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
         <div class="row navigation">
             <div class="col-6">
                 <h4>
-                    Coast Weather App
+                    City Weather App
                 </h4>
 
             </div>
@@ -34,25 +34,17 @@
         <h2>
             Want to forecast?
         </h2>
+        <button id="btn">Current Location</button>
 
         <form id="exampleForm">
 
             <div class="mb-3">
 
-                <input type="text" placeholder="What is your current city?" class="form-control" id="exampleCity"
+                <input type="text" placeholder="Enter city name" class="form-control" id="exampleCity"
                     aria-describedby="emailHelp" required>
                 <div id="cityHelp" class="form-text"></div>
             </div>
-            <!-- <div class="mb-3">
 
-                <input type="number" placeholder="What is the current temperature?(in degrees celsius)"
-                    class="form-control" id="temperature" id="exampleInputTemperature" required>
-            </div>
-            <div class="mb-3">
-
-                <input type="date" placeholder="What is the date?" class="form-control" id="exampleInputTemperature"
-                    required>
-            </div> -->
 
             <button type="submit" class="btn btn-primary">Search</button>
         </form>
@@ -60,10 +52,10 @@
             <div class="col">
                 <div class="card malindi icon">
                     <h3>
-                        <span id="exampleInput">Malindi</span>  <br>
+                        <span id="exampleInput">Malindi</span> <br>
                         <p id="day-time">Tuesday jan 4th</p>
-                        
-                        <img src="images/sun.png" alt="">
+
+                        <img id="exampleIcon" src="" alt="">
 
                         <p> Sunny </p>
                     </h3>
@@ -73,7 +65,8 @@
             <div class="col">
                 <div class="card icon mal-d">
 
-                    <p> <span id="temp">19</span> <span id="tempfah">19</span>  <span class="degree"><a href="#" id="celsius">°C </a> | <a href="" id="Fahrenheit">°F</a> </span> </p>
+                    <p> <span id="temp">19</span> <span id="tempfah">19</span> <span class="degree"><a href="#"
+                                id="celsius">°C </a> | <a href="" id="Fahrenheit">°F</a> </span> </p>
 
                 </div>
 
@@ -132,14 +125,14 @@
             &copy Copyright Saitore Virginia 2021
         </h6>
         <a href="https://github.com/Saitore973/Weather_app.git">https://github.com/Saitore973/Weather_app.git</a>
-        
-        <button id="btn">Current Location</button>
+
+
 
     </div>
 
 
 
-<script src="src/index.js"></script>
+    <script src="src/index.js"></script>
 
 </body>
 

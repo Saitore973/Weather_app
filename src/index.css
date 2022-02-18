@@ -10,6 +10,14 @@ form{
 h2{
     padding: 15px;
 }
+
+#btn{
+    margin-left: 30px;
+    background-color:blue;
+    padding: 7px 10px;
+    border-radius:15px;
+    border: none;
+}
 .navigation{
     padding: 35px;
     left: 0;

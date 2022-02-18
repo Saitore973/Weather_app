@@ -1,23 +1,51 @@
 // current day and time code
-let now= new Date();
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
 
-let hour=now.getHours();
-let minute = now.getMinutes();
-let days = ['Tunday', 'Monday','Tueday','Wedday','Thurday','Friday','Saturday'];
-let day=days[now.getDay()];
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
+}
 
-let currentTime = document.querySelector("#day-time");
-currentTime.innerHTML = `${day} ${hour}:${minute}`;
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 
 // searched city code
 
 function showTemperature(response) {
   document.querySelector("#exampleInput").innerHTML = response.data.name;
   document.querySelector("#tempfah").innerHTML = Math.round(response.data.main.temp);
-
+  document.querySelector("#day-time").innerHTML = formatDate(
+    response.data.dt * 1000
+  );
+  document.querySelector("#exampleIcon").setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
   
 }
-
 
  
 function searchCity(event) {
@@ -27,37 +55,15 @@ function searchCity(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
 axios.get(apiUrl).then(showTemperature);
-
-
-  
-  
+ 
 };
+
+
 let cityForm=document.querySelector("#exampleForm");
 cityForm.addEventListener("submit",searchCity);
 
-// interchange celcius and fahrenheit
 
-function currentTemp(event) {
-  event.preventDefault();
-  // let temperature = document.querySelector("#temp");
-  // temperature.innerHTML = "19";
-  
-};
-let temp = document.querySelector("#celsius");
-temp.addEventListener("click", currentTemp)
-
-function currentFah(event) {
-  event.preventDefault();
-  let temperatur = document.querySelector("#tempfah");
-  temperatur.innerHTML = "66 ";
-}
-let fahre = document.querySelector("#Fahrenheit");
-fahre.addEventListener("click", currentFah);
-
-
-function displayComment(response) {
-  console.log(response.data[0].comment);
-}
+// current city location code
 
 function getPosition(position){
 
