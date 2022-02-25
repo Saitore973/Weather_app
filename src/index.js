@@ -23,6 +23,19 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayForcast(){
+  document.querySelector("#forecast").innerHTML=`<div class="col">
+                <div class="card icon ">
+                    <p>
+                        Wed <br>
+                        <img src="images/sun.png" width="70" alt="">
+                        25°C
+                    </p>
+
+                </div>
+            </div>`;
+}
+
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
@@ -31,7 +44,7 @@ function formatDay(timestamp) {
   return days[day];
 }
 
-
+displayForcast();
 // searched city code
 
 function showTemperature(response) {
@@ -108,10 +121,14 @@ function convertToCelcius(event) {
   event.preventDefault();
   let celTemperature = document.querySelector("#tempfah");
   celTemperature.innerHTML=Math.round(convertTemperature);
+  celcius.classList.add("active");
+  fahrenheit.classList.remove("active");
 }
 
 let celcius = document.querySelector("#celsius");
 celcius.addEventListener("click", convertToCelcius);
+
+
 
 // nairobi weather
 
